@@ -44,11 +44,15 @@ export default function App(){
     tempArray.push(currentTask);
     setTasks(tempArray);
     console.log(tempArray);
+    setCurrentTask('');
   }
 
-  function ifClearClicked() {
+  function ifClearPendingClicked() {
     const tempArray = new Array();
     setTasks(tempArray);
+  }
+  function ifClearDoneClicked() {
+    const tempArray = new Array();
     setDoneTasks(tempArray);
   }
 
@@ -61,6 +65,7 @@ export default function App(){
         <input value={currentTask} className="search-bar" type="text" onChange={e => {setCurrentTask(e.target.value)}}/>
         <button onClick={ifButtonClicked}>Add task</button>
       </div>
+      <p className="text">Tasks pending:</p>
       <div className="tasks-container">
         <ol>
         {tasks.map(t => {
@@ -70,17 +75,19 @@ export default function App(){
         })}
         </ol>      
       </div>
+      <p className="text">Tasks done:</p>
       <div className="done-tasks-container">
         <ol>
         {
           doneTasks.map(dt => {
-            return (<li>{dt}</li>);
+            return (<li className="done-task">{dt}</li>);
           })
         }
         </ol>
       </div>
       <div className="last-container">
-        <button className="clear-button" onClick={ifClearClicked}>Clear all</button>
+        <button className="clear-pending-button" onClick={ifClearPendingClicked}>Clear all pending tasks</button>
+        <button className="clear-done-button" onClick={ifClearDoneClicked}>Clear all done tasks</button>
       </div>
     </div>
   );
