@@ -1,0 +1,84 @@
+html {
+  font-size: 16px;
+
+  --main-font: 'Roboto';
+  --header-font-weight: 500;
+  --sub-header-font-weight: 400;
+  --content-font-weight: 300;
+  --content-letter-spacing: 0.1rem;
+
+  --background-color: rgb(49, 49, 49);
+  --color: rgb(116, 211, 214);
+  --border-color: rgb(80, 153, 156);
+
+  --main-border-radius: 0.5rem;
+}
+
+body {
+  font-family: var(--main-font);
+  font-weight: var(--content-font-weight);
+  background: var(--background-color);
+  color: var(--color);
+
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: var(--content-letter-spacing);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+header h2 {
+  margin: 0;
+  border: 2px solid var(--border-color);
+  padding: 0.5rem;
+  border-radius: var(--main-border-radius);
+
+  display: inline-block;
+}
+.app {
+  border: 2px solid var(--border-color);
+  padding: 0.5rem;
+  border-radius: var(--main-border-radius);
+}
+
+.search-bar {
+  border-radius: var(--main-border-radius);
+  border: 2px solid var(--border-color);
+  padding: 0.5rem;
+  background: black;
+  color: var(--color);
+}
+.search-bar:focus {
+  outline: none;
+  border: 2px solid var(--color);
+}
+
+button {
+  background: none;
+  color: var(--color);
+  border-radius: var(--main-border-radius);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0.25rem;
+  font-weight: 800;
+
+  transition: color 0.25s;
+  transition: background 0.25s;
+}
+
+button:hover {
+  background: var(--color);
+  border: 2px solid var(--color);
+  color: var(--background-color);
+}
+
+.task-name {
+  color: var(--color);
+  display: inline-block;
+}
