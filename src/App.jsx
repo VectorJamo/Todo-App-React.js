@@ -30,10 +30,12 @@ export default function App(){
     }
 
     return (
-      <div className="task-component">
-        <p className="task-name">{task}</p>
-        <input type="checkbox" onClick={ifClicked}/>
-      </div>
+      <li>
+        <div className="task-component">
+          <p className="task-name">{task}</p>
+          <input type="checkbox" onClick={ifClicked}/>
+        </div>
+      </li>
     );
   }
 
@@ -42,6 +44,12 @@ export default function App(){
     tempArray.push(currentTask);
     setTasks(tempArray);
     console.log(tempArray);
+  }
+
+  function ifClearClicked() {
+    const tempArray = new Array();
+    setTasks(tempArray);
+    setDoneTasks(tempArray);
   }
 
   return (
@@ -54,9 +62,13 @@ export default function App(){
         <button onClick={ifButtonClicked}>Add task</button>
       </div>
       <div className="tasks-container">
+        <ol>
         {tasks.map(t => {
-          return (<TaskComponent tsk={t}/>);
+          return (
+            <TaskComponent tsk={t}/>
+          );        
         })}
+        </ol>      
       </div>
       <div className="done-tasks-container">
         <ol>
@@ -66,6 +78,9 @@ export default function App(){
           })
         }
         </ol>
+      </div>
+      <div className="last-container">
+        <button className="clear-button" onClick={ifClearClicked}>Clear all</button>
       </div>
     </div>
   );

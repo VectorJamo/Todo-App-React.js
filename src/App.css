@@ -13,6 +13,13 @@ html {
 
   --main-border-radius: 0.5rem;
 }
+* {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: var(--main-font);
@@ -81,4 +88,31 @@ button:hover {
 .task-name {
   color: var(--color);
   display: inline-block;
+}
+
+.task-component {
+  margin: 0.5rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tasks-container {
+  margin-top: 1.5rem;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: var(--main-border-radius);
+}
+.done-tasks-container{
+  margin-top: 1.5rem;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+
+  border: 2px solid var(--border-color);
+  border-radius: var(--main-border-radius);
+}
+
+.last-container {
+  margin-top: 1rem;
+  text-align: center;
 }
